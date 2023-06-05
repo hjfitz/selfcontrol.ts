@@ -38,11 +38,9 @@ export function run(command: string) {
   return new Promise((res, rej) => {
     exec(command, (err, stdout) => {
       if (err) {
-        console.error(err)
         return rej()
       }
-      console.log(stdout)
-      res(null)
+      res(stdout)
     })
   })
 }

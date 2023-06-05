@@ -27,7 +27,7 @@ export async function startBlocking() {
     return
   }
 
-  const hosts = config.sites.map((site) => `0.0.0.0 ${site}`)
+  const hosts = config.sites.map((site) => `0.0.0.0 ${site}\n:: ${site}`)
   const block = [HEAD, ...hosts, TAIL].join('\n').trim()
 
   const pass = await getPassword()

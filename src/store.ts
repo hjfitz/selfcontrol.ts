@@ -25,7 +25,7 @@ export function generateSiteAlternatives(site: string) {
     const url = new URL(site)
     domain = url.hostname
   }
-  return [domain, `www.${domain}`, `http://${domain}`, `https://${domain}`]
+  return [domain, `www.${domain}`]
 }
 
 export async function add(site: string) {
