@@ -15,8 +15,10 @@ A small CLI util to block and unblock websites, to help you get on with and focu
 
 ## Usage
 
+[![asciicast](https://asciinema.org/a/OObGQBobQrS8SwpmIAqAC9T6g.svg)](https://asciinema.org/a/OObGQBobQrS8SwpmIAqAC9T6g)
+
 ```
-Usage: index [options]
+Usage: selfcontrol [options]
 
 Options:
   -V, --version        output the version number
@@ -25,5 +27,6 @@ Options:
   -d, --delete <site>  delete site from blocked list
   -s, --start          start blocking sites
   -x, --stop           stop blocking sites
+  -c, --clear          clear blocked sites
   -h, --help           display help for command
 ```

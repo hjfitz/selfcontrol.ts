@@ -57,6 +57,13 @@ export async function deleteSite(site: string) {
   console.log(green(`Deleted ${bold(site)}`))
 }
 
+export async function clearList() {
+  const config = getConfig()
+  config.sites = []
+  await writeConfig(config)
+  console.log(green('Cleared blocked sites'))
+}
+
 export async function writeConfig(config: Config) {
   try {
     await fs.writeFile(configLocation, JSON.stringify(config, null, 2))

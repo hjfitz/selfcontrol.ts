@@ -1,6 +1,7 @@
+#!/usr/bin/env node
 import { program } from 'commander'
 import { startBlocking, stopBlocking } from './blocker'
-import { add, list, deleteSite } from './store'
+import { add, list, deleteSite, clearList } from './store'
 import { getVersion } from './util'
 
 async function main() {
@@ -12,6 +13,7 @@ async function main() {
     .option('-d, --delete <site>', 'delete site from blocked list')
     .option('-s, --start', 'start blocking sites')
     .option('-x, --stop', 'stop blocking sites')
+    .option('-c, --clear', 'clear blocked sites')
     .parse(process.argv)
     .opts()
 
@@ -25,6 +27,8 @@ async function main() {
     await add(opts.add)
   } else if (opts.delete) {
     await deleteSite(opts.delete)
+  } else if (opts.clear) {
+    await clearList()
   } else {
     program.help()
   }
