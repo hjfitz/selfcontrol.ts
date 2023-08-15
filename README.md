@@ -9,7 +9,8 @@ A small CLI util to block and unblock websites, to help you get on with and focu
 ## Installation
 
 1. Clone the repo
-1. Run `install.sh`
+1. Install the dependencies `npm i`
+1. Link the binary `npm link`
 1. Check that this has been installed with `which selfcontrol`
 
 ## Usage
