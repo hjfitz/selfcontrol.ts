@@ -23,6 +23,7 @@ export async function getPassword(): Promise<string> {
 
   process.stdout.write('Enter your password to continue: ')
   const pass = await input.question('')
+  process.stdout.write('\n')
   input.close()
   return pass
 }
@@ -38,7 +39,8 @@ export function run(command: string) {
   return new Promise((res, rej) => {
     exec(command, (err, stdout) => {
       if (err) {
-        return rej()
+        rej()
+        return
       }
       res(stdout)
     })
